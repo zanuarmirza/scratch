@@ -1,15 +1,15 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import LaunchScreen from '../Containers/LaunchScreen';
+import Auth from '../Containers/Auth';
 
 import styles from './Styles/NavigationStyles';
 
 // Manifest of possible screens
 const PrimaryNav = createStackNavigator({
-  LaunchScreen: { screen: LaunchScreen },
+  Welcome: { screen: Auth },
 }, {
   // Default config for all screens
   headerMode: 'none',
-  initialRouteName: 'LaunchScreen',
+  initialRouteName: 'Welcome',
   navigationOptions: {
     headerStyle: styles.header,
   },

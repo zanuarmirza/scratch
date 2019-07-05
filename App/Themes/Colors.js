@@ -28,6 +28,6 @@ const colors = {
   primary: '#30be76',
 
   dark_1: '#030e09',
-  dark_2: '#646464',
+  dark_2: '#a8a8a8',
 };
 export default colors;
