@@ -1,5 +1,4 @@
-import InputText from './InputText';
+import Text from "./Text";
+import InputText from "./InputText";
 
-export {
-  InputText,
-};
+export { Text, InputText };
