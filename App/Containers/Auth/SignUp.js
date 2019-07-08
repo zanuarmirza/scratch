@@ -1,51 +1,34 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
+import { Text, InputText } from "Components";
 import { Button } from "react-native-elements";
 import { moderateScale } from "react-native-size-matters";
-import { InputText } from "Components";
+
 import I18n from "../../I18n";
 import * as lang from "../../I18n/languages/Type";
 import Colors from "../../Themes/Colors";
 import Metric from "../../Themes/Metrics";
 
 const SignUp = () => (
-  <View>
-    <View style={{ marginBottom: moderateScale(47) }}>
-      <Text style={{ color: Colors.dark_2, ...Metric.text.small }}>
-        {I18n.t(lang.LOGIN_TO_CONTINUE)}
-      </Text>
-    </View>
-    <View style={{ marginBottom: moderateScale(30) }}>
-      <InputText label={I18n.t(lang.INPUT_EMAIL_LABEL)} />
-    </View>
-    <View>
-      <View style={{ position: "absolute", right: 10, zIndex: 2 }}>
-        <TouchableOpacity onPress={() => console.log("clicked")}>
-          <Text
-            style={{
-              color: Colors.dark_2,
-              ...Metric.text.small,
-              textAlign: "right"
-            }}
-          >
-            {I18n.t(lang.FORGET_PASSWORD)}
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={{ marginBottom: moderateScale(30) }}>
-        <InputText secureTextEntry label={I18n.t(lang.INPUT_PASSWORD_LABEL)} />
-      </View>
-    </View>
-    <Button
-      buttonStyle={{
-        backgroundColor: Colors.primary,
-        borderRadius: Metric.button.radius,
-        height: Metric.button.height.normal,
-        fontSize: Metric.text.medium
+  <View style={{ justifyContent: "center" }}>
+    <Text
+      style={{
+        textAlign: "center",
+        color: Colors.dark_2,
+        ...Metric.text.small
       }}
-      titleStyle={{ color: Colors.white }}
-      title={I18n.t(lang.LOGIN)}
-    />
+    >
+      {I18n.t(lang.SIGN_UP_QUESTION)}
+    </Text>
+    <Text
+      style={{
+        textAlign: "center",
+        color: Colors.primary,
+        ...Metric.text.medium
+      }}
+    >
+      {I18n.t(lang.WELCOME_SIGN_UP)}
+    </Text>
   </View>
 );
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { Button } from "react-native-elements";
 import { moderateScale } from "react-native-size-matters";
-import { InputText } from "Components";
+import { InputText, TouchableOpacity } from "Components";
 import I18n from "../../I18n";
 import * as lang from "../../I18n/languages/Type";
 import Colors from "../../Themes/Colors";
@@ -27,7 +27,7 @@ class LoginForm extends Component {
         </View>
         <View>
           <View style={{ position: "absolute", right: 10, zIndex: 2 }}>
-            <TouchableOpacity onPress={() => console.log("clicked")}>
+            <TouchableOpacity onPress={() => console.log("clicked22")}>
               <Text
                 style={{
                   color: Colors.dark_2,
@@ -50,10 +50,9 @@ class LoginForm extends Component {
           buttonStyle={{
             backgroundColor: Colors.primary,
             borderRadius: Metric.button.radius,
-            height: Metric.button.height.normal,
-            fontSize: Metric.text.medium
+            height: Metric.button.height.normal
           }}
-          titleStyle={{ color: Colors.white }}
+          titleStyle={{ color: Colors.white, ...Metric.text.medium }}
           title={I18n.t(lang.LOGIN)}
         />
       </View>

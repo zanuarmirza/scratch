@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { Metrics } from "Themes";
+import { moderateScale } from "react-native-size-matters";
 import Header from "./Header";
 import LoginForm from "./LoginForm";
 import SignUp from "./SignUp";
@@ -25,7 +26,13 @@ class Auth extends Component {
               password: this.state.password
             }}
           />
-          <SignUp />
+          <View
+            style={{
+              marginTop: moderateScale(30)
+            }}
+          >
+            <SignUp />
+          </View>
         </View>
       </View>
     );
