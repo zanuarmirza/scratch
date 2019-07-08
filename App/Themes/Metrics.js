@@ -45,10 +45,18 @@ const metrics = {
       fontSize: 20,
       lineHeight: 32
     },
+    /**
+      fontSize: 16,
+      lineHeight: 32
+     */
     medium: {
       fontSize: 16,
       lineHeight: 32
     },
+    /**
+      fontSize: 14,
+      lineHeight: 22
+     */
     small: {
       fontSize: 14,
       lineHeight: 22
@@ -60,7 +68,8 @@ const metrics = {
   },
   opacity: {
     opacity_4: 0.4
-  }
+  },
+  throttleClick: 500
 };
 
 export default metrics;
