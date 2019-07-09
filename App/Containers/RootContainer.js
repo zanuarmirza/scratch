@@ -5,9 +5,6 @@ import ReduxNavigation from "../Navigation/ReduxNavigation";
 import StartupActions from "../Redux/StartupRedux";
 import ReduxPersist from "../Config/ReduxPersist";
 
-// Styles
-import styles from "./Styles/RootContainerStyles";
-
 class RootContainer extends Component {
   componentDidMount() {
     // if redux persist is not active fire startup action
@@ -18,7 +15,7 @@ class RootContainer extends Component {
 
   render() {
     return (
-      <View style={styles.applicationView}>
+      <View style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" />
         <ReduxNavigation />
       </View>

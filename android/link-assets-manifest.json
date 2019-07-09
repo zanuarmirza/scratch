@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "App/Assets/fonts/.DS_Store",
+      "sha1": "df2fbeb1400acda0909a32c1cf6bf492f1121e07"
+    },
+    {
+      "path": "App/Assets/fonts/Nunito-Bold.ttf",
+      "sha1": "825fa7a9e355285fbe45c2eb22fffc7c4d4e0a04"
+    },
+    {
       "path": "App/Assets/fonts/Nunito-Regular.ttf",
       "sha1": "0505bb92747e64a607074c62303949692c2705af"
     }

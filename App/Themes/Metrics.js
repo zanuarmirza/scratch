@@ -45,6 +45,10 @@ const metrics = {
       fontSize: 24,
       lineHeight: 32
     },
+    /**
+      fontSize: 20,
+      lineHeight: 32
+     */
     large: {
       fontSize: 20,
       lineHeight: 32

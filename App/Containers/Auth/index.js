@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { Metrics } from "Themes";
 import { moderateScale } from "react-native-size-matters";
-import Header from "./Header";
-import LoginForm from "./LoginForm";
-import SignUp from "./SignUp";
-
-// Styles
-import styles from "../Styles/LaunchScreenStyles";
+import { Metrics } from "Themes";
+import Header from "./Components/Header";
+import LoginForm from "./Components/LoginForm";
+import SignUp from "./Components/SignUp";
 
 class Auth extends Component {
   constructor(props) {
@@ -17,7 +14,7 @@ class Auth extends Component {
 
   render() {
     return (
-      <View style={styles.mainContainer}>
+      <View style={{ flex: 1 }}>
         <Header />
         <View
           style={{
@@ -26,6 +23,7 @@ class Auth extends Component {
           }}
         >
           <LoginForm
+            navigation={this.props.navigation}
             credential={{
               email: this.state.email,
               password: this.state.password

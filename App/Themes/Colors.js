@@ -25,6 +25,7 @@ const colors = {
 
   white: "#FFF",
   primary: "#30be76",
+  primary_20: "#28a570",
 
   dark_1: "#030e09",
   dark_2: "#a8a8a8"

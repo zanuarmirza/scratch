@@ -7,24 +7,34 @@ import PropTypes from "prop-types";
  *
  * @param {TextProps} props
  */
-const Text = props => (
-  <TextRN
-    {...props}
-    style={{
-      fontFamily: "Nunito-Regular",
-      ...Metrics.text.small,
-      ...props.style
-    }}
-  >
-    {props.children}
-  </TextRN>
-);
+const Text = props => {
+  let fontFamily = { fontFamily: "Nunito-Regular" };
+  if (props.weight == "bold") {
+    fontFamily = { fontFamily: "Nunito-Bold" };
+  }
+  return (
+    <TextRN
+      {...props}
+      style={[
+        {
+          ...Metrics.text.small,
+          ...props.style
+        },
+        fontFamily
+      ]}
+    >
+      {props.children}
+    </TextRN>
+  );
+};
 
 Text.propTypes = {
-  size: PropTypes.oneOf(["xlarge", "large", "medium", "small", "xsmall"])
+  size: PropTypes.oneOf(["xlarge", "large", "medium", "small", "xsmall"]),
+  weight: PropTypes.oneOf(["reguler", "bold"])
 };
 
 Text.defaultProps = {
-  size: "small"
+  size: "small",
+  weight: "reguler"
 };
 export default Text;
