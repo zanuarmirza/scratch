@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, StatusBar } from "react-native";
 import { connect } from "react-redux";
+import { Colors } from "Themes";
 import ReduxNavigation from "../Navigation/ReduxNavigation";
 import StartupActions from "../Redux/StartupRedux";
 import ReduxPersist from "../Config/ReduxPersist";
@@ -16,7 +17,7 @@ class RootContainer extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
         <ReduxNavigation />
       </View>
     );

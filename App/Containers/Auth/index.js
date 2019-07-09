@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, StatusBar } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import { Metrics } from "Themes";
 import Header from "./Components/Header";
@@ -15,6 +15,11 @@ class Auth extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
+        <StatusBar
+          translucent
+          backgroundColor="transparent"
+          barStyle="dark-content"
+        />
         <Header />
         <View
           style={{

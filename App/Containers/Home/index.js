@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image } from "react-native";
+import { View, Image, StatusBar } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import { Metrics, Images } from "Themes";
 import { MessagesIcon, NotificationIcon, Card } from "./Components";
@@ -15,8 +15,7 @@ class Home extends Component {
         source={Images.logo}
         style={{
           width: moderateScale(149),
-          height: moderateScale(27),
-          marginLeft: moderateScale(15)
+          height: moderateScale(27)
         }}
       />
     ),

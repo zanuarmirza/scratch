@@ -13,7 +13,6 @@ const HomeStackNavigation = createStackNavigator(
   },
   {
     // Default config for all screens
-    headerMode: "none",
     initialRouteName: "Home",
     defaultNavigationOptions: () => ({
       headerStyle: styles.header,

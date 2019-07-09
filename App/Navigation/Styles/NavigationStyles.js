@@ -3,7 +3,7 @@ import { Colors,Metrics } from "../../Themes";
 
 export default StyleSheet.create({
   header: {
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.white,
     elevation: 0,
     borderBottomWidth: 0
   },
