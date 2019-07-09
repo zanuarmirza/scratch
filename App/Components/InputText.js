@@ -2,12 +2,13 @@ import React from "react";
 import { View, TextInput, TextInputProps } from "react-native";
 import { Text } from "Components";
 import { Colors, Metrics } from "Themes/";
+import { moderateScale } from "react-native-size-matters";
 /**
  *
  * @param {TextInputProps} props
  */
 const InputText = props => (
-  <View>
+  <View style={{ marginBottom: moderateScale(20) }}>
     <View>
       <Text style={{ color: Colors.dark_2, marginBottom: 10 }}>
         {props.label}

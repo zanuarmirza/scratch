@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { Button } from "react-native-elements";
 import { moderateScale } from "react-native-size-matters";
-import { InputText, TouchableOpacity } from "Components";
+import { InputText, TouchableOpacity, Text } from "Components";
 import I18n from "../../I18n";
 import * as lang from "../../I18n/languages/Type";
 import Colors from "../../Themes/Colors";
@@ -17,14 +17,12 @@ class LoginForm extends Component {
   render() {
     return (
       <View>
-        <View style={{ marginBottom: moderateScale(47) }}>
+        <View style={{ marginBottom: moderateScale(40) }}>
           <Text style={{ color: Colors.dark_2, ...Metric.text.small }}>
             {I18n.t(lang.LOGIN_TO_CONTINUE)}
           </Text>
         </View>
-        <View style={{ marginBottom: moderateScale(30) }}>
-          <InputText label={I18n.t(lang.INPUT_EMAIL_LABEL)} />
-        </View>
+        <InputText label={I18n.t(lang.INPUT_EMAIL_LABEL)} />
         <View>
           <View style={{ position: "absolute", right: 10, zIndex: 2 }}>
             <TouchableOpacity onPress={() => console.log("clicked22")}>
@@ -39,12 +37,11 @@ class LoginForm extends Component {
               </Text>
             </TouchableOpacity>
           </View>
-          <View style={{ marginBottom: moderateScale(30) }}>
-            <InputText
-              secureTextEntry
-              label={I18n.t(lang.INPUT_PASSWORD_LABEL)}
-            />
-          </View>
+
+          <InputText
+            secureTextEntry
+            label={I18n.t(lang.INPUT_PASSWORD_LABEL)}
+          />
         </View>
         <Button
           buttonStyle={{

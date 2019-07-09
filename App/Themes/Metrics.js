@@ -37,6 +37,10 @@ const metrics = {
     logo: 200
   },
   text: {
+    /**
+      fontSize: 24,
+      lineHeight: 32
+     */
     xlarge: {
       fontSize: 24,
       lineHeight: 32

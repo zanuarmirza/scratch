@@ -18,8 +18,13 @@ class Auth extends Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        {/* <Header/> */}
-        <View style={{ marginHorizontal: Metrics.marginHorizontal }}>
+        <Header />
+        <View
+          style={{
+            marginHorizontal: Metrics.marginHorizontal,
+            marginTop: moderateScale(20)
+          }}
+        >
           <LoginForm
             credential={{
               email: this.state.email,
