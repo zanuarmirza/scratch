@@ -20,9 +20,17 @@ class Home extends Component {
       />
     ),
     headerRight: (
-      <View style={{ flexDirection: "row" }}>
-        <NotificationIcon />
-        <MessagesIcon />
+      <View
+        style={{
+          flexDirection: "row"
+        }}
+      >
+        <View style={{ marginRight: moderateScale(Metrics.marginHorizontal) }}>
+          <NotificationIcon onPress={() => console.log("notification")} />
+        </View>
+        <View style={{ marginRight: moderateScale(Metrics.marginHorizontal) }}>
+          <MessagesIcon onPress={() => console.log("notification")} />
+        </View>
       </View>
     )
   });

@@ -1,6 +1,12 @@
 import React from "react";
-import { View } from "react-native";
+import { Image } from "react-native";
+import { TouchableOpacity } from "Components";
+import { Images } from "Themes";
 
-const MessagesIcon = () => <View />;
+const MessagesIcon = props => (
+  <TouchableOpacity onPress={props.onPress}>
+    <Image source={Images.messageIcon} />
+  </TouchableOpacity>
+);
 
 export default MessagesIcon;

@@ -1,6 +1,12 @@
 import React from "react";
-import { View } from "react-native";
+import { Image } from "react-native";
+import { TouchableOpacity } from "Components";
+import { Images } from "Themes";
 
-const NotificationIcon = () => <View />;
+const NotificationIcon = props => (
+  <TouchableOpacity onPress={props.onPress}>
+    <Image source={Images.notificationIcon} />
+  </TouchableOpacity>
+);
 
 export default NotificationIcon;
