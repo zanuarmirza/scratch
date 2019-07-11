@@ -3,10 +3,12 @@ import { View, ImageBackground, Image } from "react-native";
 import { Text, TouchableOpacity } from "Components";
 import { Button } from "react-native-elements";
 import { Images, Colors, Metrics } from "Themes";
-import PropTypes from "prop-types";
+import I18n from "I18n";
+import * as lang from "I18n/languages/Type";
 import { moderateScale } from "react-native-size-matters";
 
 const Card = ({
+  navigateDetailHandler,
   imageBg,
   profileImage,
   name,
@@ -28,66 +30,79 @@ const Card = ({
         overflow: "hidden"
       }}
     >
-      <ImageBackground
-        source={imageBg}
-        resizeMode="cover"
-        style={{
-          height: moderateScale(220)
-        }}
-      >
-        {/* Header */}
-        <View
+      <TouchableOpacity onPress={navigateDetailHandler}>
+        <ImageBackground
+          source={imageBg}
+          resizeMode="cover"
           style={{
-            flexDirection: "row",
-            padding: moderateScale(13),
-            backgroundColor: "rgba(255,255,255,0.9)",
-            alignItems: "center"
+            height: moderateScale(220)
           }}
         >
-          <Image
-            resizeMode="cover"
-            source={profileImage}
+          {/* Header */}
+          <View
             style={{
-              borderRadius: moderateScale(45),
-              marginRight: moderateScale(10),
-              width: moderateScale(32),
-              height: moderateScale(32)
+              flexDirection: "row",
+              padding: moderateScale(13),
+              backgroundColor: "rgba(255,255,255,0.9)",
+              alignItems: "center"
             }}
-          />
-          <View>
-            <Text size="xsmall">{name}</Text>
-            <Text size="xsmall" style={{ color: Colors.dark_2 }}>
-              {formatTime(time)}
+          >
+            <Image
+              resizeMode="cover"
+              source={profileImage}
+              style={{
+                borderRadius: moderateScale(32) / 2,
+                marginRight: moderateScale(10),
+                width: moderateScale(32),
+                height: moderateScale(32)
+              }}
+            />
+            <View>
+              <Text size="xsmall">{name}</Text>
+              <Text size="xsmall" style={{ color: Colors.dark_2 }}>
+                {formatTime(time)}
+              </Text>
+            </View>
+          </View>
+        </ImageBackground>
+        <View
+          style={{
+            paddingHorizontal: moderateScale(16)
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              paddingTop: moderateScale(10)
+            }}
+          >
+            <Text size="large" weight="bold" style={{ color: Colors.dark_1 }}>
+              {title}
             </Text>
+            <TouchableOpacity
+              style={{
+                zIndex: 2,
+                flexDirection: "column"
+              }}
+              onPress={() => console.log("like")}
+            >
+              <Image
+                source={Images.likeIcon}
+                style={{ width: moderateScale(20), flex: 1 }}
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={{ marginBottom: moderateScale(20) }}>
+            <Text>{content}</Text>
           </View>
         </View>
-      </ImageBackground>
+      </TouchableOpacity>
       <View
         style={{
-          paddingHorizontal: moderateScale(16)
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingTop: moderateScale(10)
-          }}
-        >
-          <Text size="large" weight="bold" style={{ color: Colors.dark_1 }}>
-            {title}
-          </Text>
-          <TouchableOpacity onPress={() => console.log("like")}>
-            <Image source={Images.likeIcon} />
-          </TouchableOpacity>
-        </View>
-        <View style={{ marginBottom: moderateScale(20) }}>
-          <Text>{content}</Text>
-        </View>
-      </View>
-      <View
-        style={{
+          paddingHorizontal: moderateScale(16),
           flexDirection: "row",
           flex: 1,
           justifyContent: "space-between"
@@ -107,8 +122,8 @@ const Card = ({
         >
           <Button
             type="outline"
-            title="+ Save"
-            titleStyle={{ color: Colors.primary }}
+            title={I18n.t(lang.SAVE)}
+            titleStyle={{ color: Colors.primary, ...Metrics.text.small }}
             containerStyle={{
               overflow: "hidden",
               alignItems: "center"
@@ -116,6 +131,7 @@ const Card = ({
             buttonStyle={{
               borderColor: Colors.primary,
               borderWidth: 1,
+              padding: 0,
               height: moderateScale(30),
               width: moderateScale(70),
               borderRadius: Metrics.borderRadius.small

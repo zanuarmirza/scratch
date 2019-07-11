@@ -3,10 +3,8 @@ import {
   createAppContainer,
   createSwitchNavigator
 } from "react-navigation";
-import Auth from "../Containers/Auth";
+import Auth from "../Containers/Auth/Auth";
 import TabNav from "./TabBarNavigation";
-
-import styles from "./Styles/NavigationStyles";
 
 const SwitchNavigation = createSwitchNavigator(
   {

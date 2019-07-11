@@ -12,6 +12,7 @@ const images = {
   exploreIcon: require("../Images/ic_nav_explore.png"),
   searchIcon: require("../Images/ic_nav_search.png"),
   profileIcon: require("../Images/ic_nav_profile.png"),
+  backArrow: require("../Images/ic_back.png"),
 
   dummyCookingMode: require("../Images/CookingMode.png"),
   dummyProfile_1: require("../Images/dummyProfile_1.jpg"),

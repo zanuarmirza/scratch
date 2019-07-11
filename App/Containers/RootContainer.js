@@ -17,7 +17,11 @@ class RootContainer extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
+        <StatusBar
+          translucent
+          backgroundColor="transparent"
+          barStyle="dark-content"
+        />
         <ReduxNavigation />
       </View>
     );

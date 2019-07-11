@@ -1,0 +1,36 @@
+{
+    "id":1,
+    "title":"Engine-Cooked Honey Orange Pancake",
+    "image":"dummyImageContent_3",
+    "images":[
+        {
+            "image":"dummyImageContent_1"
+        },
+        {
+            "image":"dummyImageContent_2"
+        },
+        {
+            "image":"dummyImageContent_3"
+        }
+    ],
+    "ingredient":[
+        {
+            "image":"dummyImageContent_1",
+            "content":"cooking spray"
+        },
+        {
+            "image":"dummyImageContent_3",
+            "content":"1/2 cup whole milk"
+        },
+        {
+            "image":"dummyImageContent_2",
+            "content":"2 large eggs 1 tablespoon maple syrup"
+        },
+        {
+            "image":"dummyImageContent_3",
+            "content":"1/2 teaspoon  vanilla extract"
+        }
+    ],
+    "howToCook":["Use fresh ingredients whenever possible","Organize your tools and ingredients before cooking","Include contrasting textures in your meals","Season your food with salt and pepper"],
+    "additional":"Apparently we had reached a great height in the atmosphere, for the sky was ..."
+}

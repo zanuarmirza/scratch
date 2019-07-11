@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { View, Image, FlatList } from "react-native";
+import { View, Image, FlatList, StatusBar } from "react-native";
 import { moderateScale } from "react-native-size-matters";
-import { Metrics, Images } from "Themes";
+import { Metrics, Images, Colors } from "Themes";
 import { MessagesIcon, NotificationIcon, Card } from "./Components";
 
 import dataDummy from "./DummyData.json";
@@ -11,6 +11,10 @@ class Home extends Component {
    * Header Configuration
    */
   static navigationOptions = ({ navigation }) => ({
+    headerStyle: {
+      marginTop: StatusBar.currentHeight,
+      elevation: 0
+    },
     headerLeft: (
       <Image
         resizeMode="contain"
@@ -44,6 +48,7 @@ class Home extends Component {
 
   _renderItem = ({ item }) => (
     <Card
+      navigateDetailHandler={() => this.props.navigation.navigate("Cooking")}
       imageBg={Images[item.content_image]}
       profileImage={Images[item.profile_image]}
       name={item.name}

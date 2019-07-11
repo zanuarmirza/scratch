@@ -15,11 +15,6 @@ class Auth extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="dark-content"
-        />
         <Header />
         <View
           style={{

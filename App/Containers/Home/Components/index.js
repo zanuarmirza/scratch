@@ -1,5 +1,5 @@
 import Card from "./Card";
-import MessagesIcon from "./MessagesIcon";
-import NotificationIcon from "./NotificationIcon";
+import MessagesIcon from "./Toolbar/MessagesIcon";
+import NotificationIcon from "./Toolbar/NotificationIcon";
 
 export { Card, MessagesIcon, NotificationIcon };

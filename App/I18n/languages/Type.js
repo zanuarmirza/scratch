@@ -16,3 +16,4 @@ export const ADDITIONAL = "additional";
 export const COOKING_MODE = "cookingMode";
 export const STEPS = "steps";
 export const VIEW_INGREDIENTS = "viewIngredients";
+export const BACK_TO_PROFILE = "BackToProfile";

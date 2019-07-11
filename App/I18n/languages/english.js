@@ -20,5 +20,6 @@ lang[key.ADDITIONAL] = "Additional";
 lang[key.COOKING_MODE] = "Cooking Mode";
 lang[key.STEPS] = "Steps";
 lang[key.VIEW_INGREDIENTS] = "View Ingredients";
+lang[key.BACK_TO_PROFILE] = "Back to Profile";
 
 export default lang;
