@@ -28,6 +28,7 @@ const colors = {
   primary_20: "#28a570",
 
   dark_1: "#030e09",
-  dark_2: "#a8a8a8"
+  dark_2: "#a8a8a8",
+  dark_2_opacity_5: "#a8a8a880"
 };
 export default colors;

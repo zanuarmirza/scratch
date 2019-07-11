@@ -17,7 +17,7 @@ const Text = props => {
       {...props}
       style={[
         {
-          ...Metrics.text.small,
+          ...Metrics.text[props.size],
           ...props.style
         },
         fontFamily

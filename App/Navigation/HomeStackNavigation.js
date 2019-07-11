@@ -25,11 +25,11 @@ HomeStackNavigation.navigationOptions = ({ navigation }) => ({
   header: null,
   headerVisible: false,
   headerMode: "screen",
-  tabBarLabel: "Berbagi",
-  tabBarAccessibilityLabel: "BerbagiNav",
+  tabBarLabel: "Home",
+  tabBarAccessibilityLabel: "HomeNav",
   tabBarIcon: ({ focused }) => (
     <Image
-      source={Images.likeIcon}
+      source={Images.exploreIcon}
       resizeMode="contain"
       style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
     />

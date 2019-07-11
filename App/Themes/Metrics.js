@@ -16,9 +16,11 @@ const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   navBarHeight: Platform.OS === "ios" ? 64 : 54,
-  buttonRadius: 8,
+  borderRadius: {
+    small: 4,
+    big: 8
+  },
   button: {
-    radius: 8,
     height: {
       normal: moderateScale(50)
     }

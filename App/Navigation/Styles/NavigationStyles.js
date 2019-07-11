@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
-import { Colors,Metrics } from "../../Themes";
+import { moderateScale, verticalScale } from "react-native-size-matters";
+import { Colors, Metrics } from "../../Themes";
 
 export default StyleSheet.create({
   header: {
@@ -14,5 +15,17 @@ export default StyleSheet.create({
     alignSelf: "center",
     flex: 1,
     ...Metrics.text.large
+  },
+  tabActiveIcon: {
+    height: moderateScale(15.94),
+    width: moderateScale(16.91),
+    marginTop: verticalScale(0.1),
+    tintColor: Colors.primary
+  },
+  tabInactiveIcon: {
+    height: moderateScale(15.94),
+    width: moderateScale(16.91),
+    marginTop: verticalScale(0.1),
+    tintColor: Colors.dark_2
   }
 });
