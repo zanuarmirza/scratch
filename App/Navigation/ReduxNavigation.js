@@ -21,7 +21,13 @@ class ReduxNavigation extends React.Component {
       const { dispatch, nav } = this.props;
       console.log("nav", nav);
       // change to whatever is your first screen, otherwise unpredictable results may occur
-      if (nav.routes.length === 1 && nav.routes[0].routeName === "Welcome") {
+      const tabNav = nav.routes[0].routes[1];
+      if (
+        nav.routes.length === 1 &&
+        nav.routes[0].routeName === "Welcome" &&
+        tabNav.index == 1 &&
+        tabNav.routes[1].index == 0 // exit app when the page on Home
+      ) {
         return false;
       }
       // if (shouldCloseApp(nav)) return false

@@ -18,52 +18,9 @@ import { Ingredients, HowToCook, Additional } from "./Components";
 import dataDummy from "./DummyData.json";
 
 class Cooking extends Component {
-  /**
-   * Header Configuration
-   */
-  static navigationOptions = ({ navigation }) => {
-    const ButtonContent = () => (
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Image
-          source={Images.playIcon}
-          style={{ width: moderateScale(7), height: moderateScale(3) }}
-        />
-        <Text>{I18n.t(lang.COOK_NOW)}</Text>
-      </View>
-    );
-    return {
-      headerLeft: (
-        <BackButtonArrow
-          onPress={() => navigation.goBack()}
-          label={I18n.t(lang.BACK_TO_PROFILE)}
-        />
-      ),
-      headerRight: (
-        <View
-          style={{
-            flexDirection: "row"
-          }}
-        >
-          <Button
-            ViewComponent={ButtonContent}
-            type="outline"
-            containerStyle={{
-              overflow: "hidden",
-              alignItems: "center"
-            }}
-            buttonStyle={{
-              backgroundColor: Colors.dark_1_opacity_5,
-              borderColor: Colors.white,
-              borderWidth: 1,
-              height: moderateScale(30),
-              width: moderateScale(70),
-              borderRadius: Metrics.borderRadius.small
-            }}
-          />
-        </View>
-      )
-    };
-  };
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+  });
 
   state = {
     /* eslint-disable react/no-unused-state */

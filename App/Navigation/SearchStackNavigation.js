@@ -4,7 +4,6 @@ import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
 import Home from "../Containers/Home/Home";
 import styles from "./Styles/NavigationStyles";
-import tabBarOptions from "./TabBarOption";
 
 // Manifest of possible screens
 const HomeStackNavigation = createStackNavigator(
@@ -13,7 +12,6 @@ const HomeStackNavigation = createStackNavigator(
   },
   {
     // Default config for all screens
-    headerMode: "none",
     initialRouteName: "Home",
     navigationOptions: {
       headerStyle: styles.header
@@ -33,8 +31,7 @@ HomeStackNavigation.navigationOptions = ({ navigation }) => ({
       resizeMode="contain"
       style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
     />
-  ),
-  tabBarOptions
+  )
 });
 
 export default HomeStackNavigation;

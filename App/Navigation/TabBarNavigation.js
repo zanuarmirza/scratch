@@ -1,16 +1,47 @@
-import { createBottomTabNavigator } from "react-navigation";
+import React from "react";
+import { SafeAreaView } from "react-native";
+import {
+  createMaterialTopTabNavigator,
+  MaterialTopTabBar
+} from "react-navigation";
+import { Colors } from "Themes";
 import HomeStack from "./HomeStackNavigation";
-import CookingStack from "./CookingStackNavigation";
+import ProfileStack from "./ProfileStackNavigation";
 import SearchStack from "./SearchStackNavigation";
 
-const TabNav = createBottomTabNavigator(
+function SafeAreaMaterialTopTabBar(props) {
+  return (
+    <SafeAreaView>
+      <MaterialTopTabBar {...props} />
+    </SafeAreaView>
+  );
+}
+
+const TabNav = createMaterialTopTabNavigator(
   {
     Search: { screen: SearchStack },
     Home: { screen: HomeStack },
-    Cooking: { screen: CookingStack }
+    Profile: { screen: ProfileStack }
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Home",
+    swipeEnabled: true,
+    tabBarPosition: "bottom",
+    tabBarComponent: SafeAreaMaterialTopTabBar,
+    tabBarOptions: {
+      showIcon: true,
+      showLabel: false,
+      activeTintColor: Colors.primary,
+      inactiveTintColor: Colors.primary_20,
+      indicatorStyle: {
+        backgroundColor: "transparent"
+      },
+      style: {
+        borderTopWidth: 1,
+        borderTopColor: Colors.dark_2_opacity_5,
+        backgroundColor: Colors.white
+      }
+    }
   }
 );
 

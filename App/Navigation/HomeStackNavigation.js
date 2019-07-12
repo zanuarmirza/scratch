@@ -3,13 +3,14 @@ import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
 import Home from "../Containers/Home/Home";
+import Cooking from "../Containers/Cooking/Cooking";
 import styles from "./Styles/NavigationStyles";
-import tabBarOptions from "./TabBarOption";
 
 // Manifest of possible screens
 const HomeStackNavigation = createStackNavigator(
   {
-    Home: { screen: Home }
+    Home: { screen: Home },
+    Cooking: { screen: Cooking }
   },
   {
     // Default config for all screens
@@ -33,8 +34,7 @@ HomeStackNavigation.navigationOptions = ({ navigation }) => ({
       resizeMode="contain"
       style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
     />
-  ),
-  tabBarOptions
+  )
 });
 
 export default HomeStackNavigation;

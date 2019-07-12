@@ -2,18 +2,17 @@ import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
-import Cooking from "../Containers/Cooking/Cooking";
+import Profile from "../Containers/Home/Home";
 import styles from "./Styles/NavigationStyles";
-import tabBarOptions from "./TabBarOption";
 
 // Manifest of possible screens
 const CookingStackNavigation = createStackNavigator(
   {
-    Cooking: { screen: Cooking }
+    Profile: { screen: Profile }
   },
   {
     // Default config for all screens
-    initialRouteName: "Cooking",
+    initialRouteName: "Profile",
     navigationOptions: {
       headerStyle: styles.header
     }
@@ -24,16 +23,15 @@ CookingStackNavigation.navigationOptions = ({ navigation }) => ({
   header: null,
   headerVisible: false,
   headerMode: "screen",
-  tabBarLabel: "Cooking",
-  tabBarAccessibilityLabel: "CookingNav",
+  tabBarLabel: "Profile",
+  tabBarAccessibilityLabel: "ProfileNav",
   tabBarIcon: ({ focused }) => (
     <Image
       source={Images.profileIcon}
       resizeMode="contain"
       style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
     />
-  ),
-  tabBarOptions
+  )
 });
 
 export default CookingStackNavigation;
