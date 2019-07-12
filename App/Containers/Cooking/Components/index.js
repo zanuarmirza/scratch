@@ -1,6 +1,7 @@
 import ListItem from "./ListItem";
-import Ingredients from "./Ingredients";
-import HowToCook from "./HowToCook";
-import Additional from "./Additional";
+import Ingredients from "./TabSection/Ingredients";
+import HowToCook from "./TabSection/HowToCook";
+import Additional from "./TabSection/Additional";
+import ImagesPreview from "./ImagesPreview";
 
-export { ListItem, Ingredients, HowToCook, Additional };
+export { ListItem, Ingredients, HowToCook, Additional, ImagesPreview };

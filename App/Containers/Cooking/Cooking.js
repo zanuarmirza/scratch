@@ -1,16 +1,15 @@
 import { Text } from "Components";
 import React, { Component } from "react";
-import {
-  Dimensions,
-  FlatList,
-  ImageBackground,
-  View,
-  ScrollView
-} from "react-native";
+import { Dimensions, ImageBackground, View, ScrollView } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import { SceneMap, TabBar, TabView } from "react-native-tab-view";
 import { Colors, Images, Metrics } from "Themes";
-import { Additional, HowToCook, Ingredients } from "./Components";
+import {
+  Additional,
+  HowToCook,
+  Ingredients,
+  ImagesPreview
+} from "./Components";
 import dataDummy from "./DummyData.json";
 
 class Cooking extends Component {
@@ -29,16 +28,6 @@ class Cooking extends Component {
     ]
     /* eslint-disable react/no-unused-state */
   };
-
-  _renderImagePreview = () => (
-    <FlatList
-      data={dataDummy}
-      renderItem={this._renderItem}
-      keyExtractor={item => item.id.toString()}
-      showsVerticalScrollIndicator={false}
-      removeClippedSubviews
-    />
-  );
 
   _renderTabBar = props => (
     <TabBar
@@ -87,6 +76,14 @@ class Cooking extends Component {
               </Text>
             </View>
           </ImageBackground>
+          <View
+            style={{
+              marginHorizontal: moderateScale(Metrics.marginHorizontal),
+              marginVertical: moderateScale(20)
+            }}
+          >
+            <ImagesPreview images={dataDummy.images} />
+          </View>
           <TabView
             renderTabBar={this._renderTabBar}
             navigationState={this.state}
