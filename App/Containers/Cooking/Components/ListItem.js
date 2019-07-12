@@ -4,16 +4,22 @@ import { Text, TouchableOpacity } from "Components";
 import { moderateScale } from "react-native-size-matters";
 
 const ListItem = props => (
-  <TouchableOpacity>
-    <View style={{ flexDirection: "row" }}>
+  <TouchableOpacity onPress={() => console.log("click")}>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: moderateScale(15)
+      }}
+    >
       <Image
         source={props.image}
         resizeMode="cover"
         style={{
-          borderRadius: moderateScale(60),
+          borderRadius: moderateScale(49) / 2,
           marginRight: moderateScale(10),
-          width: moderateScale(60),
-          height: moderateScale(60)
+          width: moderateScale(49),
+          height: moderateScale(49)
         }}
       />
       <Text> {props.content} </Text>

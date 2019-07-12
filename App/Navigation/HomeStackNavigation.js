@@ -9,32 +9,47 @@ import styles from "./Styles/NavigationStyles";
 // Manifest of possible screens
 const HomeStackNavigation = createStackNavigator(
   {
-    Home: { screen: Home },
-    Cooking: { screen: Cooking }
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        gesturesEnabled: true
+      }
+    },
+    Cooking: {
+      screen: Cooking,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
+    }
   },
   {
     // Default config for all screens
     initialRouteName: "Home",
-    defaultNavigationOptions: () => ({
+    defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: styles.header,
       headerTitleStyle: styles.headerTitle
     })
   }
 );
 
-HomeStackNavigation.navigationOptions = ({ navigation }) => ({
-  header: null,
-  headerVisible: false,
-  headerMode: "screen",
-  tabBarLabel: "Home",
-  tabBarAccessibilityLabel: "HomeNav",
-  tabBarIcon: ({ focused }) => (
-    <Image
-      source={Images.exploreIcon}
-      resizeMode="contain"
-      style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
-    />
-  )
-});
+HomeStackNavigation.navigationOptions = ({ navigation }) => {
+  return {
+    header: null,
+    headerVisible: false,
+    headerMode: "screen",
+    tabBarLabel: "Home",
+    tabBarAccessibilityLabel: "HomeNav",
+    swipeEnabled: () => {
+      return navigation.state.index == 0;
+    },
+    tabBarIcon: ({ focused }) => (
+      <Image
+        source={Images.exploreIcon}
+        resizeMode="contain"
+        style={focused ? styles.tabActiveIcon : styles.tabInactiveIcon}
+      />
+    )
+  };
+};
 
 export default HomeStackNavigation;

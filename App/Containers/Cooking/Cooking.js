@@ -1,25 +1,22 @@
-import { BackButtonArrow, Text } from "Components";
-import I18n from "I18n";
-import * as lang from "I18n/languages/Type";
+import { Text } from "Components";
 import React, { Component } from "react";
 import {
-  FlatList,
-  Image,
-  View,
-  ImageBackground,
   Dimensions,
-  StatusBar
+  FlatList,
+  ImageBackground,
+  View,
+  ScrollView
 } from "react-native";
-import { TabView, SceneMap, TabBar } from "react-native-tab-view";
-import { Button } from "react-native-elements";
 import { moderateScale } from "react-native-size-matters";
-import { Colors, Metrics, Images } from "Themes";
-import { Ingredients, HowToCook, Additional } from "./Components";
+import { SceneMap, TabBar, TabView } from "react-native-tab-view";
+import { Colors, Images, Metrics } from "Themes";
+import { Additional, HowToCook, Ingredients } from "./Components";
 import dataDummy from "./DummyData.json";
 
 class Cooking extends Component {
   static navigationOptions = ({ navigation }) => ({
-    header: null
+    header: null,
+    gesturesEnabled: false
   });
 
   state = {
@@ -63,43 +60,45 @@ class Cooking extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <ImageBackground
-          source={Images[dataDummy.image]}
-          resizeMode="cover"
-          style={{
-            flex: 1
-          }}
-        >
-          <View
+        <ScrollView>
+          <ImageBackground
+            source={Images[dataDummy.image]}
+            resizeMode="cover"
             style={{
-              flex: 1,
-              marginHorizontal: Metrics.marginHorizontal,
-              justifyContent: "flex-end",
-              marginBottom: moderateScale(20)
+              height: Dimensions.get("window").width
             }}
           >
-            <Text
-              weight="bold"
+            <View
               style={{
-                color: Colors.white,
-                ...Metrics.text.xlarge
+                flex: 1,
+                marginHorizontal: moderateScale(Metrics.marginHorizontal),
+                justifyContent: "flex-end",
+                marginBottom: moderateScale(20)
               }}
             >
-              {dataDummy.title}
-            </Text>
-          </View>
-        </ImageBackground>
-        <TabView
-          renderTabBar={this._renderTabBar}
-          navigationState={this.state}
-          renderScene={SceneMap({
-            first: Ingredients,
-            second: HowToCook,
-            third: Additional
-          })}
-          onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: Dimensions.get("window").width }}
-        />
+              <Text
+                weight="bold"
+                style={{
+                  color: Colors.white,
+                  ...Metrics.text.xlarge
+                }}
+              >
+                {dataDummy.title}
+              </Text>
+            </View>
+          </ImageBackground>
+          <TabView
+            renderTabBar={this._renderTabBar}
+            navigationState={this.state}
+            renderScene={SceneMap({
+              first: () => <Ingredients data={dataDummy.ingredient} />,
+              second: HowToCook,
+              third: Additional
+            })}
+            onIndexChange={index => this.setState({ index })}
+            initialLayout={{ width: Dimensions.get("window").width }}
+          />
+        </ScrollView>
       </View>
     );
   }

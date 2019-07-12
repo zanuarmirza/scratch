@@ -15,18 +15,22 @@
     ],
     "ingredient":[
         {
+            "id":1,
             "image":"dummyImageContent_1",
             "content":"cooking spray"
         },
         {
+            "id":2,
             "image":"dummyImageContent_3",
             "content":"1/2 cup whole milk"
         },
         {
+            "id":3,
             "image":"dummyImageContent_2",
             "content":"2 large eggs 1 tablespoon maple syrup"
         },
         {
+            "id":4,
             "image":"dummyImageContent_3",
             "content":"1/2 teaspoon  vanilla extract"
         }
