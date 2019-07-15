@@ -2,24 +2,24 @@ import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
-import Home from "../Containers/Home/Home";
+import Search from "../Containers/Home/Home";
 import styles from "./Styles/NavigationStyles";
 
 // Manifest of possible screens
-const HomeStackNavigation = createStackNavigator(
+const SearchStackNavigation = createStackNavigator(
   {
-    Home: { screen: Home }
+    Search: { screen: Search }
   },
   {
     // Default config for all screens
-    initialRouteName: "Home",
+    initialRouteName: "Search",
     navigationOptions: {
       headerStyle: styles.header
     }
   }
 );
 
-HomeStackNavigation.navigationOptions = ({ navigation }) => ({
+SearchStackNavigation.navigationOptions = ({ navigation }) => ({
   header: null,
   headerVisible: false,
   headerMode: "screen",
@@ -34,4 +34,4 @@ HomeStackNavigation.navigationOptions = ({ navigation }) => ({
   )
 });
 
-export default HomeStackNavigation;
+export default SearchStackNavigation;
