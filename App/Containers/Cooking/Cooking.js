@@ -4,6 +4,7 @@ import { Dimensions, ImageBackground, View, ScrollView } from "react-native";
 import { moderateScale } from "react-native-size-matters";
 import { SceneMap, TabBar, TabView } from "react-native-tab-view";
 import { Colors, Images, Metrics } from "Themes";
+import Header from "./Components/HeaderCooking";
 import {
   Additional,
   HowToCook,
@@ -50,6 +51,7 @@ class Cooking extends Component {
     return (
       <View style={{ flex: 1 }}>
         <ScrollView>
+          <Header />
           <ImageBackground
             source={Images[dataDummy.image]}
             resizeMode="cover"
@@ -57,23 +59,25 @@ class Cooking extends Component {
               height: Dimensions.get("window").width
             }}
           >
-            <View
-              style={{
-                flex: 1,
-                marginHorizontal: moderateScale(Metrics.marginHorizontal),
-                justifyContent: "flex-end",
-                marginBottom: moderateScale(20)
-              }}
-            >
-              <Text
-                weight="bold"
+            <View style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.2)" }}>
+              <View
                 style={{
-                  color: Colors.white,
-                  ...Metrics.text.xlarge
+                  flex: 1,
+                  marginHorizontal: moderateScale(Metrics.marginHorizontal),
+                  justifyContent: "flex-end",
+                  marginBottom: moderateScale(20)
                 }}
               >
-                {dataDummy.title}
-              </Text>
+                <Text
+                  weight="bold"
+                  style={{
+                    color: Colors.white,
+                    ...Metrics.text.xlarge
+                  }}
+                >
+                  {dataDummy.title}
+                </Text>
+              </View>
             </View>
           </ImageBackground>
           <View
