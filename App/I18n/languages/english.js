@@ -11,6 +11,7 @@ lang[key.LOGIN] = "Login";
 lang[key.SIGN_UP_QUESTION] = "New to Scratch";
 lang[key.WELCOME_SIGN_UP] = "Create Account Here";
 lang[key.LIKES] = "likes";
+lang[key.FOLLOWERS] = "followers";
 lang[key.COMMENTS] = "Comments";
 lang[key.SAVE] = "Save";
 lang[key.COOK_NOW] = "Cook Now";
@@ -21,5 +22,8 @@ lang[key.COOKING_MODE] = "Cooking Mode";
 lang[key.STEPS] = "Steps";
 lang[key.VIEW_INGREDIENTS] = "View Ingredients";
 lang[key.BACK_TO_PROFILE] = "Back to Profile";
+lang[key.MYKITCHEN] = "My Kitchen";
+lang[key.SETTINGS] = "Settings";
+
 
 export default lang;

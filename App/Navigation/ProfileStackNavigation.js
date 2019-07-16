@@ -2,11 +2,11 @@ import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
-import Profile from "../Containers/Home/Home";
+import Profile from "../Containers/Profile/Profile";
 import styles from "./Styles/NavigationStyles";
 
 // Manifest of possible screens
-const CookingStackNavigation = createStackNavigator(
+const ProfileStackNavigation = createStackNavigator(
   {
     Profile: { screen: Profile }
   },
@@ -19,7 +19,7 @@ const CookingStackNavigation = createStackNavigator(
   }
 );
 
-CookingStackNavigation.navigationOptions = ({ navigation }) => ({
+ProfileStackNavigation.navigationOptions = ({ navigation }) => ({
   header: null,
   headerVisible: false,
   headerMode: "screen",
@@ -34,4 +34,4 @@ CookingStackNavigation.navigationOptions = ({ navigation }) => ({
   )
 });
 
-export default CookingStackNavigation;
+export default ProfileStackNavigation;

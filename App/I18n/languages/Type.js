@@ -7,6 +7,7 @@ export const LOGIN = "login";
 export const SIGN_UP_QUESTION = "signUpQuestion";
 export const WELCOME_SIGN_UP = "welcomeSignUp";
 export const LIKES = "likes";
+export const FOLLOWERS = "Followers";
 export const COMMENTS = "comments";
 export const SAVE = "save";
 export const COOK_NOW = "cookNow";
@@ -17,3 +18,6 @@ export const COOKING_MODE = "cookingMode";
 export const STEPS = "steps";
 export const VIEW_INGREDIENTS = "viewIngredients";
 export const BACK_TO_PROFILE = "BackToProfile";
+export const MYKITCHEN = "MyKitchen";
+export const SETTINGS = "Settings";
+

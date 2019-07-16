@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Image, FlatList, StatusBar } from "react-native";
 import { moderateScale } from "react-native-size-matters";
-import { Metrics, Images, Colors } from "Themes";
+import { Metrics, Images } from "Themes";
 import { MessagesIcon, NotificationIcon, Card } from "./Components";
 
 import dataDummy from "./DummyData.json";

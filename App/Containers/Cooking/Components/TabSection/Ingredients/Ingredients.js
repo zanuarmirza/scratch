@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, View } from "react-native";
 import { Images, Metrics } from "Themes";
 import { moderateScale } from "react-native-size-matters";
-import ListItem from "../ListItem";
+import ListItem from "./ListItem";
 
 const Ingredients = props => {
   console.log("dataDummy", props);
