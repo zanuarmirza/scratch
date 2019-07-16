@@ -1,16 +1,15 @@
+import { Text } from "Components";
 import React from "react";
 import { FlatList, View } from "react-native";
-import { Images, Metrics } from "Themes";
-import { moderateScale } from "react-native-size-matters";
-import ListItem from "./ListItem";
 
 const Recipes = props => {
-  console.log("dataDummy", props);
-  const _renderItem = ({ item }) => (
-    <ListItem image={Images[item.image]} content={item.content} />
+  const _renderItem = ({ item, index }) => (
+    <Text>
+      {index}. {item}
+    </Text>
   );
   return (
-    <View style={{ marginHorizontal: moderateScale(Metrics.marginHorizontal) }}>
+    <View>
       <FlatList
         data={props.data}
         renderItem={_renderItem}
