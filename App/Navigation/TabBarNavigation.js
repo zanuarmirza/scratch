@@ -19,12 +19,12 @@ function SafeAreaMaterialTopTabBar(props) {
 
 const TabNav = createMaterialTopTabNavigator(
   {
-    Search: { screen: SearchStack },
     Home: { screen: HomeStack },
+    Search: { screen: SearchStack },
     Profile: { screen: ProfileStack }
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Search",
     swipeEnabled: true,
     tabBarPosition: "bottom",
     tabBarComponent: SafeAreaMaterialTopTabBar,

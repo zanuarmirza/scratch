@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Images } from "Themes";
-import Search from "../Containers/Home/Home";
+import Search from "../Containers/Search/Search";
 import styles from "./Styles/NavigationStyles";
 
 // Manifest of possible screens
