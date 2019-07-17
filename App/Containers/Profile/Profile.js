@@ -26,7 +26,7 @@ class Profile extends Component {
   };
 
   _renderTabBar = props => {
-    console.log(props);
+    console.log(dataDummy.recipes);
     return (
       <TabBar
         {...props}
@@ -40,13 +40,13 @@ class Profile extends Component {
   };
 
   _renderLabel = ({ index, value, label }) => {
-    let viewStyle;
+    const viewStyle = { flex: 1 };
     switch (index) {
       case 1:
-        viewStyle = { alignItems: "center" };
+        viewStyle.alignItems = "center";
         break;
       case 2:
-        viewStyle = { alignItems: "flex-end" };
+        viewStyle.alignItems = "flex-end";
         break;
       default:
         break;
@@ -68,31 +68,39 @@ class Profile extends Component {
     return (
       <View
         style={{
-          flex: 1,
-          marginHorizontal: moderateScale(Metrics.marginHorizontal)
+          flex: 1
         }}
       >
-        <ScrollView>
-          <Header profile={dataDummy.profile} />
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View
             style={{
-              position: "relative",
-              top: moderateScale(60),
-              marginTop: moderateScale(-50),
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "space-between"
+              marginHorizontal: moderateScale(Metrics.marginHorizontal)
             }}
           >
-            {this._renderLabel({ index: 0, value: 20, label: "Recipe" })}
-            {this._renderLabel({ index: 1, value: 20, label: "Saved" })}
-            {this._renderLabel({ index: 2, value: 20, label: "Following" })}
+            <Header profile={dataDummy.profile} />
+            <View
+              style={{
+                position: "relative",
+                top: moderateScale(60),
+                marginTop: moderateScale(-50),
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between"
+              }}
+            >
+              {this._renderLabel({ index: 0, value: 20, label: "Recipe" })}
+              {this._renderLabel({ index: 1, value: 20, label: "Saved" })}
+              {this._renderLabel({ index: 2, value: 20, label: "Following" })}
+            </View>
           </View>
           <TabView
             renderTabBar={this._renderTabBar}
             navigationState={this.state}
+            sceneContainerStyle={{
+              marginTop: moderateScale(20)
+            }}
             renderScene={SceneMap({
-              first: Recipes,
+              first: () => <Recipes data={dataDummy.recipes} />,
               second: Saved,
               third: Following
             })}

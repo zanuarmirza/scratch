@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TouchableOpacity as TouchableOpacityRN } from "react-native";
+import {
+  TouchableOpacity as TouchableOpacityRN,
+  TouchableOpacityProps
+} from "react-native";
 import TouchableThrottle from "./TouchableThrottle";
 
+/**
+ *
+ * @param {TouchableOpacityProps} props
+ */
 const TouchableOpacity = props => {
   return (
     <TouchableThrottle
