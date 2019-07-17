@@ -36,8 +36,11 @@ HomeStackNavigation.navigationOptions = ({ navigation }) => {
   return {
     header: null,
     headerVisible: false,
-    headerMode: "screen",
     tabBarLabel: "Home",
+    headerMode: "none",
+    mode: "modal",
+    transparentCard: true,
+    cardStyle: { opacity: 1 },
     tabBarAccessibilityLabel: "HomeNav",
     swipeEnabled: () => {
       return navigation.state.index == 0;

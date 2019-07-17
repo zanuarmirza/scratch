@@ -12,8 +12,10 @@ class Home extends Component {
    */
   static navigationOptions = ({ navigation }) => ({
     headerStyle: {
-      marginTop: StatusBar.currentHeight,
-      elevation: 0
+      elevation: 0,
+      shadowOpacity: 0,
+      borderBottomWidth: 0,
+      marginBottom: -1
     },
     headerLeft: (
       <Image
@@ -63,10 +65,13 @@ class Home extends Component {
   render() {
     return (
       <View
-        style={{ marginHorizontal: moderateScale(Metrics.marginHorizontal) }}
+        style={{
+          marginHorizontal: moderateScale(Metrics.marginHorizontal)
+        }}
       >
         <FlatList
           data={dataDummy}
+          contentContainerStyle={{ paddingTop: moderateScale(20) }}
           renderItem={this._renderItem}
           keyExtractor={item => item.id.toString()}
           showsVerticalScrollIndicator={false}

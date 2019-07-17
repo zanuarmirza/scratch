@@ -10,7 +10,10 @@ import dataDummy from "./DummyData.json";
 class Profile extends Component {
   static navigationOptions = ({ navigation }) => ({
     headerStyle: {
-      elevation: 0
+      elevation: 0,
+      shadowOpacity: 0,
+      borderBottomWidth: 0,
+      marginBottom: -1
     }
   });
 

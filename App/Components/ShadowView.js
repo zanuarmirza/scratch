@@ -41,16 +41,28 @@ const ShadowView = props => {
   return (
     <View
       style={{
-        width,
-        height,
-        backgroundColor: "white",
-        borderRadius: 8,
-        overflow: "hidden",
-        elevation,
-        ...viewStyle
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5
       }}
     >
-      {props.children}
+      <View
+        style={{
+          width,
+          height: height - padding,
+          backgroundColor: "white",
+          borderRadius: 8,
+          overflow: "hidden"
+        }}
+      >
+        {props.children}
+      </View>
     </View>
   );
 };
