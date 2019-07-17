@@ -5,6 +5,7 @@ import TouchableHighlight from "./Touchable/TouchableHighlight";
 import TouchableOpacity from "./Touchable/TouchableOpacity";
 import HeaderContainer from "./Header/HeaderContainer";
 import Header from "./Header/Header";
+import ShadowView from "./ShadowView";
 
 export {
   Text,
@@ -13,5 +14,6 @@ export {
   TouchableOpacity,
   BackButtonArrow,
   HeaderContainer,
-  Header
+  Header,
+  ShadowView
 };

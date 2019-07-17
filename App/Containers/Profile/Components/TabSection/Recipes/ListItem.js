@@ -1,43 +1,29 @@
+import { ShadowView, Text } from "Components";
 import React from "react";
-import { View, Image } from "react-native";
-import { Text, TouchableOpacity } from "Components";
+import { Image } from "react-native";
 import { moderateScale } from "react-native-size-matters";
-import { Metrics, Colors } from "Themes";
+import { Images } from "Themes";
 
 const ListItem = props => (
-  <TouchableOpacity
-    style={{
-      overflow: "hidden",
-      borderRadius: Metrics.borderRadius.big,
-      elevation: 5
-    }}
-    onPress={() => console.log("click")}
-  >
-    <View
+  <ShadowView width={160} height={152} padding={20} offsetx={5} elevation={5}>
+    <Image
+      source={Images.dummyImageContent_1}
+      resizeMode="cover"
       style={{
-        width: moderateScale(154),
-        height: moderateScale(131),
-        backgroundColor: Colors.white
+        width: 160,
+        height: 99
+      }}
+    />
+    <Text
+      style={{
+        alignSelf: "center",
+        textAlign: "center",
+        paddingVertical: moderateScale(4)
       }}
     >
-      <Image
-        source={props.image}
-        resizeMode="cover"
-        style={{
-          width: moderateScale(154),
-          height: moderateScale(99)
-        }}
-      />
-      <Text
-        style={{
-          alignSelf: "center",
-          paddingVertical: moderateScale(4)
-        }}
-      >
-        {props.name}
-      </Text>
-    </View>
-  </TouchableOpacity>
+      Sweet
+    </Text>
+  </ShadowView>
 );
 
 export default ListItem;

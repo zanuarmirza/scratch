@@ -3,6 +3,7 @@ package com.sandbox;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import ui.materialshadows.RNMaterialShadowsPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNMaterialShadowsPackage(),
             new ReanimatedPackage(),
             new ReactNativeConfigPackage(),
             new RNDeviceInfo(),
